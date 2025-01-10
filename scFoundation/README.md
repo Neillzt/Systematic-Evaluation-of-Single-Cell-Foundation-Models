@@ -1,5 +1,9 @@
 We provide different methods to evaluate the Foundation model.
 
+## Prerequisites
+
+Before using the script, please make sure to install the required environment and packages. `scFoundation_environment.yml`
+
 ## Script Features
 
 The provided script includes the following functionalities:
