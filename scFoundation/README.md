@@ -4,7 +4,7 @@ We provide different methods to evaluate the Foundation model.
 
 The provided script includes the following functionalities:
 
-### 1. Fine-Tuning and Few-Shot Training
+### 1. Fine-Tuning and Few-Shot Training `ft.py`
 - Supports **basic fine-tuning training** and **few-shot training**.
 - Allows **freezing** or **updating** pre-trained weights.
 - Provides an **expandable classification layer** that can be customized as needed.
