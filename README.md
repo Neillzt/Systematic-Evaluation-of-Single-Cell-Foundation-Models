@@ -35,6 +35,44 @@ Extended experiments
 - **Covid-19**: [[Download Link](https://drive.google.com/drive/folders/1jSPoPunGQOmd71vDsK0FS7UvmDhGdhQS)]
 - **Lung-Kim**: [[Download Link](https://drive.google.com/drive/folders/1gbfO7VqxCOkfzgHAih6hO88zFv6pd8wO)]
 
+## Scripts Overview
+
+### 1. **`scGPT_baselines_LR.py`**
+Runs the logistic regression baseline for annotating cell types in the **myeloid**, **multiple sclerosis**, and **pancreas** datasets, including the few-shot settings.
+
+---
+
+### 2. **`scGPT_run_all_celltypeannot_fewshot.py`**
+Runs scGPT fine-tuning for annotating cell types in the **myeloid**, **multiple sclerosis**, and **pancreas** datasets, including the few-shot settings. This script is based on the annotation tutorial provided in [scGPT's GitHub repository](https://github.com).
+
+---
+
+### 3. **`scGPT_run_all_celltypeannot_nopretrain{_freeze}.py`**
+Runs the **"no pre-training"** ablation study on scGPT, with or without freezing pre-decoder weights. This script generates results for:
+- **Supplementary Figure 6**
+- **Supplementary Table 5**
+
+---
+
+### 4. **`create_figures_and_tables.ipynb`**
+Processes the output of the previous scripts to create:
+- **Figure 3**
+- **Supplementary Figure 6**
+- **Supplementary Table 5**
+
+---
+
+### How to Use
+1. Ensure all datasets are correctly set up and paths are configured in the scripts.
+2. Run the desired script(s) based on the task:
+   - For baseline comparison: `scGPT_baselines_LR.py`
+   - For fine-tuning scGPT: `scGPT_run_all_celltypeannot_fewshot.py`
+   - For ablation studies: `scGPT_run_all_celltypeannot_nopretrain{_freeze}.py`
+3. Use `create_figures_and_tables.ipynb` to generate visualizations and tables from the results.
+
+For further details, refer to the comments within each script or the associated [documentation](#).
+
+
 
 ## Key Findings
 
