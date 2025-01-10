@@ -37,7 +37,9 @@ Extended experiments
 
 ## Folders Overview
 
-### Dataset
+Because the data input interface of each model is inconsistent, we provide different data processing methods. The details are provided in Data_set proess
+
+A separate test method is provided for each model. Please ensure that the corresponding environment is installed before use. The environment file is provided in the file of each model
 
 
 
