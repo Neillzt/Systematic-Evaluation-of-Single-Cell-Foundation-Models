@@ -4,6 +4,10 @@ We provide different methods to evaluate the Foundation model.
 
 Before using the script, please make sure to install the required environment and packages. `scFoundation_environment.yml`
 
+## Pre-trained Weights
+
+The pre-trained weights are available for download and should be placed in the `models/` directory.
+
 ## Script Features
 
 The provided script includes the following functionalities:
