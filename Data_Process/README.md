@@ -1,3 +1,16 @@
+## How to Use:
+
+1. Ensure all datasets are correctly set up and paths are configured in the scripts.
+2. Run the desired script(s) based on the task:
+   - For Data split to train and validate for scFoundation version: `.py`
+   - For few-shot for scFoundation version: `scGPT_run_all_celltypeannot_fewshot.py`
+   - For ablation studies: `scGPT_run_all_celltypeannot_nopretrain{_freeze}.py`
+3. Use `create_figures_and_tables.ipynb` to generate visualizations and tables from the results.
+4. Use `create_figures_and_tables.ipynb` to generate visualizations and tables from the results.
+
+For further details, refer to the comments within each script or the associated [documentation](#).
+
+
 
 ## Dataset Overview
 
