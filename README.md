@@ -2,6 +2,8 @@
 
 **Our article is now published on WSDM Day 2025.**
 
+The repository is continuously updated.
+
 We systemly evaluate three state-of-the-art single-cell foundation models—**scGPT**, **GeneFormer**, and **scFoundation**—on cell-type classification tasks. We evaluated the models using five datasets: **Myeloid (Mye.)**, **hPancreas**, and **Multiple Sclerosis (M.S.)**, **Covid-19**, **Lung-Kim** under standard **Fine-tuning** and **Few-shot** learning scenarios. We also selected two baseline models: **Linear Regression (LR)** and **XGBoost** as our benchmarks. 
 
 In the extended experiments, we added training results of **Ablation** and **Zero-Shot** and tried various combinations of classification layers.
