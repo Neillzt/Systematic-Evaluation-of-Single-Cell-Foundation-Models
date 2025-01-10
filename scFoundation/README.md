@@ -24,7 +24,7 @@ The provided script includes the following functionalities:
 ---
 
 ### How to Use
-- Adjust the parameters for **fine-tuning**, **training from scratch**, or **zero-shot training** in the script as needed.
+- Adjust the path and dataset for **fine-tuning**, **training from scratch**, or **zero-shot training** in the script as needed.
 - Refer to the script comments for detailed instructions on parameter configuration and execution.
 
 For more details, check the provided script or documentation.
