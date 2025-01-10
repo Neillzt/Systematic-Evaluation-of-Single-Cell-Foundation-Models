@@ -2,7 +2,7 @@
 
 ## Overview
 
-This study System evaluate three state-of-the-art single-cell foundation models—**scGPT**, **GeneFormer**, and **scFoundation**—on cell type classification tasks. We evaluated the models using three datasets: **Myeloid**, **human Pancreas**, and **Multiple Sclerosis**, under both standard fine-tuning and few-shot learning scenarios.
+This study System evaluate three state-of-the-art single-cell foundation models—**scGPT**, **GeneFormer**, and **scFoundation**—on cell type classification tasks. We evaluated the models using five datasets: **Myeloid**, **human Pancreas**, and **Multiple Sclerosis**, **Covid-19**, **Lung-Kim** under both standard fine-tuning and few-shot learning scenarios.
 
 ## Key Findings
 
