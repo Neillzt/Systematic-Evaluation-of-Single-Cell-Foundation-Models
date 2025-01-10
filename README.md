@@ -44,14 +44,10 @@ A separate test method is provided for each model. Please ensure that the corres
 
 
 
-## Key Findings
+## Conclusion
 
-- **scFoundation** consistently outperforms the other models.
-- **GeneFormer** often underperforms, sometimes yielding results worse than baseline models.
-- **scFoundation** demonstrates strong generalization on out-of-distribution (OOD) data, a capability lacking in baseline models.
+Our study systematically evaluated state-of-the-art single-cell foundation models—**scGPT**, **Geneformer**, and **scFoundation**—on tasks such as fine-tuning for cell annotation and few-shot learning. Among these, **scFoundation** consistently achieved the best performance, while **scGPT** showed moderate success, surpassing baseline models on some datasets. **Geneformer**, however, performed the worst across nearly all scenarios.
 
-## Significance
+Out-of-distribution experiments further confirmed that robust foundation models like **scFoundation** can generalize well even when fine-tuned on out-of-distribution data, a capability lacking in baseline models. These findings highlight the potential of foundation models in biomedical research and the importance of rigorous benchmarking on standard datasets.
 
-Our work highlights the potential of foundation models for addressing complex biomedical challenges, especially in scenarios where models are trained on one population but deployed on another.
-
-For further details, feel free to contact us or check back after the repository is updated.
+## Citing
