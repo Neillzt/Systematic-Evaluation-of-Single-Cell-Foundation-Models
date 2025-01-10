@@ -15,7 +15,7 @@ def convert_and_split_adata(adata, output_prefix, seeds=[0,1,2,3,4], train_size=
     seeds (list): List of random seeds for reproducible splits
     train_size (float): Proportion of training set
     """
-    # Extract expression matrix
+    # Extract expression matrix and process
     expression_matrix = pd.DataFrame(
         adata.X.toarray() if scipy.sparse.issparse(adata.X) else adata.X,
         index=adata.obs_names,
@@ -29,7 +29,14 @@ def convert_and_split_adata(adata, output_prefix, seeds=[0,1,2,3,4], train_size=
     new_columns = [id_to_name.get(col, col) for col in expression_matrix.columns]
     expression_matrix.columns = new_columns
     
-    # Process each seed
+    if seeds is None:
+        # For test data, just save the converted matrix
+        output_file = f"{output_prefix}_test.csv"
+        expression_matrix.to_csv(output_file)
+        print(f"Test data saved to {output_file}")
+        return
+
+    # Process each seed for train/val split
     for seed in seeds:
         print(f"\nProcessing seed {seed}:")
         
@@ -104,12 +111,26 @@ def reorder_genes_by_tsv(csv_file, tsv_file, output_file):
             len(set(gene_order) - set(expression_data.columns)),
             len(set(expression_data.columns) - set(gene_order)))
 
-def process_all_files(input_prefix, output_prefix, tsv_file, seeds):
+def process_all_files(input_prefix, output_prefix, tsv_file, seeds=None):
     """
-    Process and reorder genes for all train/val files across multiple seeds.
+    Process and reorder genes for all files (train/val/test) across seeds if applicable.
     """
     print("Starting gene reordering process...")
     
+    if seeds is None:
+        # Process test file
+        test_input = f"{input_prefix}_test.csv"
+        test_output = f"{output_prefix}_test.csv"
+        
+        print("\nProcessing test set:")
+        orig_genes, new_genes, added_genes, removed_genes = reorder_genes_by_tsv(
+            test_input, tsv_file, test_output
+        )
+        print(f"Test set - Original genes: {orig_genes}, Final: {new_genes}")
+        print(f"Added: {added_genes}, Removed: {removed_genes}")
+        return
+
+    # Process train/val sets for each seed
     for seed in seeds:
         print(f"\nProcessing seed {seed}")
         
@@ -134,26 +155,34 @@ def process_all_files(input_prefix, output_prefix, tsv_file, seeds):
         print(f"Added: {added_genes}, Removed: {removed_genes}")
 
 def main():
-    # Initial setup
-    input_data = 'batch_covid_subsampled_train.h5ad'
-    output_prefix = 'Cod'
+    # Initial setup: If you use Covid-19 dataset
     tsv_file = 'OS_scRNA_gene_index.19264.tsv'
+    output_prefix = 'Cod'
     seeds = range(5)
     
-    # Step 1: Convert and split AnnData
-    print("Step 1: Converting and splitting AnnData...")
-    adata = sc.read_h5ad(input_data)
-    convert_and_split_adata(adata, output_prefix, seeds=seeds, train_size=0.9)
+    # Process training data
+    print("Processing training data...")
+    train_data = 'batch_covid_subsampled_train.h5ad'
+    adata_train = sc.read_h5ad(train_data)
+    convert_and_split_adata(adata_train, output_prefix, seeds=seeds, train_size=0.9)
+    process_all_files(output_prefix, output_prefix, tsv_file, seeds=seeds)
     
-    # Step 2: Reorder genes
-    print("\nStep 2: Reordering genes according to TSV file...")
-    process_all_files(output_prefix, output_prefix, tsv_file, seeds)
+    # Process test data
+    print("\nProcessing test data...")
+    test_data = 'batch_covid_subsampled_test.h5ad'
+    adata_test = sc.read_h5ad(test_data)
+    convert_and_split_adata(adata_test, output_prefix, seeds=None)
+    process_all_files(output_prefix, output_prefix, tsv_file, seeds=None)
     
-    # Verify final output
-    print("\nVerifying final output (seed 0):")
-    final_train = pd.read_csv(f'{output_prefix}_train_seed_0.csv', index_col=0)
-    final_val = pd.read_csv(f'{output_prefix}_val_seed_0.csv', index_col=0)
-    print(f"Final shapes - Train: {final_train.shape}, Val: {final_val.shape}")
+    # Verify outputs
+    print("\nVerifying outputs:")
+    test_data = pd.read_csv(f'{output_prefix}_test.csv', index_col=0)
+    train_data = pd.read_csv(f'{output_prefix}_train_seed_0.csv', index_col=0)
+    val_data = pd.read_csv(f'{output_prefix}_val_seed_0.csv', index_col=0)
+    
+    print(f"Test data shape: {test_data.shape}")
+    print(f"Training data shape (seed 0): {train_data.shape}")
+    print(f"Validation data shape (seed 0): {val_data.shape}")
 
 if __name__ == "__main__":
     main()
