@@ -5,7 +5,7 @@
 We systemly evaluate three state-of-the-art single-cell foundation models—**scGPT**, **GeneFormer**, and **scFoundation**—on cell-type classification tasks. We evaluated the models using five datasets: **Myeloid**, **human Pancreas**, and **Multiple Sclerosis**, **Covid-19**, **Lung-Kim** under standard **fine-tuning** and **few-shot** learning scenarios. We also selected two baseline models: **Linear Regression (LR)** and **XGBoost** as our benchmarks. In the extended experiments, we added training results from **Scratch** and **Zero-Shot** and tried various combinations of classification layers.
 
 ## Single Cell Foundation Models
-** [scFoundation](https://github.com/biomap-research/scFoundation/tree/main)**  learned specific gene expressions across 19,264 common human genes which is a 100M-parameter pretrained model based on xTrimoGene, trained on over 50 million human single-cell transcriptomics data.
+**[scFoundation](https://github.com/biomap-research/scFoundation/tree/main)**  learned specific gene expressions across 19,264 common human genes which is a 100M-parameter pretrained model based on xTrimoGene, trained on over 50 million human single-cell transcriptomics data.
 **GeneFormer**
 **scGPT**
 
