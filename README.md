@@ -13,9 +13,12 @@ We systemly evaluate three state-of-the-art single-cell foundation models—**sc
 
 As provided by the scGPT authors:
 - **Multiple Sclerosis (M.S.) dataset**: [[Download Link](https://drive.google.com/drive/folders/1Qd42YNabzyr2pWt9xoY4cVMTAxsNBt4v)](#)
-- **Myeloid (Mye.) dataset**: [Download Link](#)
-- **hPancreas dataset**: [Download Link](#)
-- 
+- **Myeloid (Mye.) dataset**: [[Download Link](https://drive.google.com/drive/folders/1VbpApQufZq8efFGakW3y8QDDpY9MBoDS)](#)
+- **hPancreas dataset**: [[Download Link](https://drive.google.com/drive/folders/1s9XjcSiPC-FYV3VeHrEa7SeZetrthQVV)](#)
+
+Extended experiments
+- **Covid-19**: [[Download Link](https://drive.google.com/drive/folders/1jSPoPunGQOmd71vDsK0FS7UvmDhGdhQS)](#)
+- **Lung-Kim**: [[Download Link](https://drive.google.com/drive/folders/1gbfO7VqxCOkfzgHAih6hO88zFv6pd8wO)](#)
 
 
 ## Key Findings
