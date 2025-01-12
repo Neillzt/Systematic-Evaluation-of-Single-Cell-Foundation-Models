@@ -1,6 +1,6 @@
 # Systematic-Evaluation-of-Single-Cell-Foundation-Models
 
-**Our article is now published on WSDM Day 2025.**
+**Our article is now published on [WSDM Day 2025](https://www.wsdm-conference.org/2025/wsdm-day-talks/).**
 
 The repository is continuously updated.
 
