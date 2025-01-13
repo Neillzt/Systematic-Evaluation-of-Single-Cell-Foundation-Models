@@ -14,10 +14,10 @@ For further details, refer to the comments within each script.
 
 ## Dataset Overview
 
-| **Dataset**   | **Train** | **Test** |
-|----------------|-----------|----------|
-| **Lung-Kim**   | 23,185    | 7,387    |
-| **Covid-19**   | 15,997    | 4,003    |
-| **Myeloid**    | 9,748     | 3,430    |
-| **hPancreas**  | 10,600    | 4,218    |
-| **MS**         | 7,844     | 13,468   |
+| **Dataset**   | **Train** | **Test** | **Type** | **Note** |
+|----------------|-----------|----------|----------|----------|
+| **Lung-Kim**   | 23,185    | 7,387    |          | class imbalance     |
+| **Covid-19**   | 15,997    | 4,003    |          |                     |
+| **Myeloid**    | 9,748     | 3,430    |          |                     |
+| **hPancreas**  | 10,600    | 4,218    |          | class imbalance     |
+| **MS**         | 7,844     | 13,468   |          | Out of distribution |
