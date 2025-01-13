@@ -20,4 +20,4 @@ For further details, refer to the comments within each script.
 | **Covid-19**   | 15,997    | 4,003    | 39     |                     |
 | **Myeloid**    | 9,748     | 3,430    | 21     |                     |
 | **hPancreas**  | 10,600    | 4,218    | 13     | Class Imbalance     |
-| **MS**         | 7,844     | 13,468   | 18     | Out of Distribution |
+| **Multiple Sclerosis**         | 7,844     | 13,468   | 18     | Out of Distribution |
